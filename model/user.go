@@ -1,8 +1,8 @@
 package model
 
-type user struct {
-	username string
-	password string
-	mibao string
-	answer string
+type User struct {
+	Username string
+	Password string
+	Mibao string
+	Answer string
 }
