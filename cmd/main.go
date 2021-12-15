@@ -28,5 +28,6 @@ func main(){
 	api.Login(engine)
 	//实现修改密码功能，调用api层的ChangePassword接口和ForgetPassword接口
 	api.ChangePassword(engine)
+	api.ForgetPassword(engine)
 	engine.Run()
 }

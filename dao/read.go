@@ -15,3 +15,4 @@ func ReadUser(u string) (model.User,error){
 	err=db.QueryRow(sqlstr,u).Scan(&user.Username,&user.Password,&user.Mibao,&user.Answer)
 	return user,err
 }
+

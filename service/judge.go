@@ -15,4 +15,16 @@ func JudgePassword(inputPw,mysqlPw,username,service string)bool{
 	}
 }
 
-//判断密保，在后台打印是否成功的信息，返回一个布尔值，反应密保答案是否正确，
+//判断密保，在后台打印是否成功的信息，返回一个布尔值，反应密保答案是否正确，供service层调用
+func JudgeMibao(answer,mysqlAnswer,username,service string)bool{
+	if answer != mysqlAnswer {
+		fmt.Println(username,"密保错误",service)
+		b := false
+		return b
+	}else {
+		fmt.Println(username,"密保正确",service)
+		b := true
+		return b
+	}
+
+}
