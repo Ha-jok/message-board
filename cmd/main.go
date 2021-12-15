@@ -21,6 +21,13 @@ import (
 //service层接收dao层读取的数据库信息，并调用dao层中的函数，readUser,updateUser
 //dao层read.go读取信息，updata.go修改信息。
 
+//注册功能
+//cmd层：调用api层包装的接口regist
+//api层：接收用户发送的信息，调用service层包装的接口进行处理，接收一个错误和布尔值。通过对布尔值的处理，发送响应报文
+//service层，传入用户输入的信息，判断用户名和密码是否合法，如果合法调用dao层封装的insertuser接口向数据库中添加，将错误返回，并返回一个布尔值。
+//dao层，传入新用户信息，添加到数据库中。
+
+
 
 func main(){
 	engine := api.CreateRout()
@@ -29,5 +36,13 @@ func main(){
 	//实现修改密码功能，调用api层的ChangePassword接口和ForgetPassword接口
 	api.ChangePassword(engine)
 	api.ForgetPassword(engine)
+	//注册接口
+	//发表留言接口
+	//修改留言接口
+	//删除留言接口
+	//查看留言接口（自己和别人）
+	//评论留言相关接口
+
+
 	engine.Run()
 }
