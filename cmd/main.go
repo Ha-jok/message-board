@@ -37,6 +37,7 @@ func main(){
 	api.ChangePassword(engine)
 	api.ForgetPassword(engine)
 	//注册接口
+	api.Regist(engine)
 	//发表留言接口
 	//修改留言接口
 	//删除留言接口
