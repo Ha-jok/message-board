@@ -17,8 +17,8 @@ func CreateRout()*gin.Engine{
 //	engine.Run("8080")
 //}
 
-func POST(relitivePath string,engine *gin.Engine,function func (context *gin.Context),c *gin.Context){
+func POST(relitivePath string,engine *gin.Engine,function func (context *gin.Context)){
 	engine.POST(relitivePath, function)
-	engine.Run()
+
 }
 

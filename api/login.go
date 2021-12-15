@@ -7,7 +7,7 @@ import (
 )
 
 
-//创建一个函数作为中间件,使用户发送用户名和密码。,并判断用户名密码是否正确
+//创建一个函数作为中间件,使用户发送用户名和密码,并判断用户名密码是否正确
 func loginMiddleware (c *gin.Context){
 	//用户发送信息
 	username := c.PostForm("username")
@@ -34,6 +34,5 @@ func loginMiddleware (c *gin.Context){
 }
 //创建登录接口
 func Login(engine *gin.Engine){
-	var c *gin.Context
-	POST("/login",engine,loginMiddleware,c)
+	POST("/login",engine,loginMiddleware)
 }

@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"message-board/dao"
 )
@@ -11,18 +10,6 @@ import (
 
 func Login(un,pw string)(error,bool){
 	u,err:=dao.ReadUser(un)
-	b := judgePassword(pw,u.Password,u.Username)
+	b := JudgePassword(pw,u.Password,u.Username,"登录")
 	return err,b
-}
-//判断密码,在后台打印用户是否登录成功的信息信息,并返回一个布尔值，反应密码是否正确
-func judgePassword(inputPw,mysqlPw,username string)bool{
-	if inputPw != mysqlPw{
-		fmt.Println(username,"登陆失败")
-		b := false
-		return b
-	}else {
-		fmt.Println(username,"已登录")
-		b := true
-		return b
-	}
 }
